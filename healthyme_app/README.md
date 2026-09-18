@@ -7,7 +7,7 @@ Halo tim! Biar kode kita tidak saling bentrok dan project berjalan lancar, tolon
 * Buka **GitHub Desktop** -> klik `File` -> `Clone Repository...`.
 * Pilih repository project kita ini, tentukan lokasi folder di laptop kalian, lalu klik **Clone**.
 
-### 2. Aturan Emas: JANGAN KODING DI BRANCH MAIN!
+### 2. JANGAN KODING DI BRANCH MAIN!
 Setiap kali mau mengerjakan tugas baru (misalnya bikin UI Dashboard), **wajib** membuat *branch* (cabang) baru.
 1. Buka GitHub Desktop, pastikan bagian *Current Branch* berada di `main`.
 2. Klik tombol **Fetch origin** di bagian atas untuk menarik *update* kode terbaru dari rekan tim lain.
