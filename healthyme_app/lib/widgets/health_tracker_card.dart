@@ -71,7 +71,7 @@ class HealthTrackerCard extends StatelessWidget {
               child: LinearProgressIndicator(
                 value: progress!.clamp(0.0, 1.0),
                 minHeight: 6,
-                backgroundColor: Colors.white.withOpacity(0.3),
+                backgroundColor: Colors.white.withValues(alpha: 0.3),
                 valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
               ),
             ),
@@ -80,7 +80,7 @@ class HealthTrackerCard extends StatelessWidget {
               margin: const EdgeInsets.only(top: 2),
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.25),
+                color: Colors.white.withValues(alpha: 0.25),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(
