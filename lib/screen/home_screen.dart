@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../main.dart';
+import '../screen/profile_screen.dart';
 import '../widgets/quick_action_item.dart';
 import '../widgets/health_tracker_card.dart';
 import '../widgets/article_card.dart';
@@ -23,22 +23,21 @@ class HomeScreen extends StatelessWidget {
 
   static const List<Map<String, String>> _articles = [
     {
-      'title': 'Lorem Ipsum Dolor Sit Amet',
-      'desc':
-          'Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.',
-      'image': 'assets/images/article_cover_1.svg',
+      'title': 'Rajin Olahraga Membantu Cegah Berbagai Penyakit di Usia Senja',
+      'desc': 'Cek olahraga apa saja yang cocok untuk usia anda',
+      'image': 'assets/images/article_cover_1.png',
     },
     {
-      'title': 'Lorem Ipsum Dolor Sit Amet',
+      'title': 'Perbanyak Buah dan Sayur agar Pencernaan Lancar',
       'desc':
-          'Consectetur Adipiscing Elit, Sed Do Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.',
-      'image': 'assets/images/article_cover_2.svg',
+          'Sistem Pencernaan yang lancar tidak hanya berpaku pada pola hidup sehat, namun juga menjaga asupan vitamin dan mineral sesuai kebutuhan',
+      'image': 'assets/images/article_cover_2.jpg',
     },
     {
       'title': 'Tips Menjaga Pola Makan',
       'desc':
           'Cara sederhana menjaga pola makan sehat di tengah kesibukan sehari-hari.',
-      'image': 'assets/images/article_cover_1.svg',
+      'image': 'assets/images/article_cover_3.jpg',
     },
   ];
 
@@ -57,7 +56,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildHeader(),
+            _buildHeader(context),
             const SizedBox(height: 16),
             _buildAppointmentBanner(),
             const SizedBox(height: 16),
@@ -72,15 +71,23 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildHeader() {
+  Widget _buildHeader(BuildContext context) {
     return Row(
       children: [
-        ClipOval(
-          child: SvgPicture.asset(
-            'assets/images/photo_profile_john.svg',
-            width: 44,
-            height: 44,
-            fit: BoxFit.cover,
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const ProfileScreen()),
+            );
+          },
+          child: ClipOval(
+            child: Image.asset(
+              'assets/images/photo_profile_john.png',
+              width: 44,
+              height: 44,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
         const SizedBox(width: 10),

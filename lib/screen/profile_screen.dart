@@ -32,8 +32,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
     if (picked != null) {
       setState(() {
-        _dobController.text =
-            '${picked.day.toString().padLeft(2, '0')}/'
+        _dobController.text = '${picked.day.toString().padLeft(2, '0')}/'
             '${picked.month.toString().padLeft(2, '0')}/${picked.year}';
       });
     }
@@ -58,17 +57,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, size: 20),
-          onPressed: () => Navigator.pop(context),
-        ),
         title: const Text('Profile'),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 16),
-            child: Icon(Icons.settings_outlined, size: 20),
-          ),
-        ],
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -78,7 +67,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               const CircleAvatar(
                 radius: 36,
                 backgroundColor: AppColors.primaryLight,
-                child: Icon(Icons.person, size: 36, color: AppColors.dark),
+                backgroundImage:
+                    AssetImage('assets/images/photo_profile_john.png'),
               ),
               const SizedBox(height: 20),
               CustomTextField(label: 'Full Name', controller: _nameController),

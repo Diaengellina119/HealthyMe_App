@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../main.dart';
 
 class ArticleCard extends StatelessWidget {
@@ -35,7 +34,7 @@ class ArticleCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: const BorderRadius.vertical(top: Radius.circular(14)),
-            child: SvgPicture.asset(
+            child: Image.asset(
               imageAsset,
               width: double.infinity,
               height: 80,
