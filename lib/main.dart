@@ -103,7 +103,8 @@ class _RootNavigationState extends State<RootNavigation> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(icon, size: 64, color: AppColors.primary.withOpacity(0.4)),
+            Icon(icon,
+                size: 64, color: AppColors.primary.withValues(alpha: 0.4)),
             const SizedBox(height: 12),
             Text(
               '$title Screen',
@@ -148,7 +149,7 @@ class _RootNavigationState extends State<RootNavigation> {
             borderRadius: BorderRadius.circular(30),
             boxShadow: [
               BoxShadow(
-                color: AppColors.primary.withOpacity(0.35),
+                color: AppColors.primary.withValues(alpha: 0.35),
                 blurRadius: 12,
                 offset: const Offset(0, 6),
               ),
@@ -161,7 +162,7 @@ class _RootNavigationState extends State<RootNavigation> {
             backgroundColor: Colors.transparent,
             elevation: 0,
             selectedItemColor: Colors.white,
-            unselectedItemColor: Colors.white.withOpacity(0.6),
+            unselectedItemColor: Colors.white.withValues(alpha: 0.6),
             showSelectedLabels: true,
             showUnselectedLabels: true,
             selectedLabelStyle: const TextStyle(fontSize: 11),
