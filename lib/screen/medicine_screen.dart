@@ -47,7 +47,7 @@ class _MedicineScreenState extends State<MedicineScreen> {
               style: const TextStyle(color: AppColors.dark, fontSize: 16)),
           const SizedBox(height: 12),
           SizedBox(
-            height: 132, // sebelumnya 150, disesuaikan dg tinggi konten asli
+            height: 138,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemCount: _medicineItems.length,
