@@ -171,29 +171,29 @@ class HomeScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           final item = _quickActions[index];
           return QuickActionItem(
-              iconAsset: item['icon']!,
-              label: item['label']!,
-              onTap: item['label'] == 'Medicine'
+            iconAsset: item['icon']!,
+            label: item['label']!,
+            onTap: item['label'] == 'Medicine'
                 ? () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const MedicineScreen()),
-              )
-              : item['label'] == 'Doctors'
-                ? () {
-                    Navigator.push(
                       context,
-                        MaterialPageRoute(
-                          builder: (context) => const ChatDenganDokterScreen(),
-                      ),
-                   );
-                }
-              : null,
-          )
+                      MaterialPageRoute(builder: (_) => const MedicineScreen()),
+                    )
+                : item['label'] == 'Doctors'
+                    ? () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                const ChatDenganDokterScreen(),
+                          ),
+                        );
+                      }
+                    : null,
+          );
         },
       ),
     );
   }
-  
 
   Widget _buildHealthTrackerSection() {
     final double waterProgress = _waterValue / _waterTarget;
