@@ -122,7 +122,7 @@ class _RootNavigationState extends State<RootNavigation> {
   List<Widget> get _pages => [
         const HomeScreen(),
         _placeholderPage('Chat', Icons.chat_bubble_outline),
-        _placeholderPage('History', Icons.search_outlined),
+        _placeholderPage('History', Icons.history),
         const SettingsScreen(),
       ];
 
@@ -178,8 +178,8 @@ class _RootNavigationState extends State<RootNavigation> {
                 label: 'Chat',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.search_outlined),
-                activeIcon: Icon(Icons.search),
+                icon: Icon(Icons.history_outlined),
+                activeIcon: Icon(Icons.history),
                 label: 'History',
               ),
               BottomNavigationBarItem(
