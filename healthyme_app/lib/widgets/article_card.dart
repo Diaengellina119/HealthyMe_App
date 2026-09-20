@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_svg/flutter_svg.dart';
 import '../main.dart';
 
 class ArticleCard extends StatelessWidget {
   final String title;
   final String description;
-  final IconData imageIcon;
-  final Color imageColor;
+  final String imageAsset;
 
   const ArticleCard({
     super.key,
     required this.title,
     required this.description,
-    this.imageIcon = Icons.article_outlined,
-    this.imageColor = AppColors.primaryLight,
+    required this.imageAsset,
   });
 
   @override
@@ -35,16 +33,14 @@ class ArticleCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height: 80,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: imageColor,
-              borderRadius: const BorderRadius.vertical(
-                top: Radius.circular(14),
-              ),
+          ClipRRect(
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(14)),
+            child: SvgPicture.asset(
+              imageAsset,
+              width: double.infinity,
+              height: 80,
+              fit: BoxFit.cover,
             ),
-            child: Icon(imageIcon, color: AppColors.dark, size: 28),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),

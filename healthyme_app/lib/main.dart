@@ -40,65 +40,35 @@ class HealthyMeApp extends StatelessWidget {
               ),
         ).copyWith(
           displayLarge: GoogleFonts.leagueSpartan(
-            fontWeight: FontWeight.w400,
-            color: AppColors.dark,
-          ),
+              fontWeight: FontWeight.w400, color: AppColors.dark),
           displayMedium: GoogleFonts.leagueSpartan(
-            fontWeight: FontWeight.w400,
-            color: AppColors.dark,
-          ),
+              fontWeight: FontWeight.w400, color: AppColors.dark),
           displaySmall: GoogleFonts.leagueSpartan(
-            fontWeight: FontWeight.w400,
-            color: AppColors.dark,
-          ),
+              fontWeight: FontWeight.w400, color: AppColors.dark),
           headlineLarge: GoogleFonts.leagueSpartan(
-            fontWeight: FontWeight.w400,
-            color: AppColors.dark,
-          ),
+              fontWeight: FontWeight.w400, color: AppColors.dark),
           headlineMedium: GoogleFonts.leagueSpartan(
-            fontWeight: FontWeight.w400,
-            color: AppColors.dark,
-          ),
+              fontWeight: FontWeight.w400, color: AppColors.dark),
           headlineSmall: GoogleFonts.leagueSpartan(
-            fontWeight: FontWeight.w400,
-            color: AppColors.dark,
-          ),
+              fontWeight: FontWeight.w400, color: AppColors.dark),
           titleLarge: GoogleFonts.leagueSpartan(
-            fontWeight: FontWeight.w400,
-            color: AppColors.dark,
-          ),
+              fontWeight: FontWeight.w400, color: AppColors.dark),
           titleMedium: GoogleFonts.leagueSpartan(
-            fontWeight: FontWeight.w400,
-            color: AppColors.dark,
-          ),
+              fontWeight: FontWeight.w400, color: AppColors.dark),
           titleSmall: GoogleFonts.leagueSpartan(
-            fontWeight: FontWeight.w400,
-            color: AppColors.dark,
-          ),
+              fontWeight: FontWeight.w400, color: AppColors.dark),
           bodyLarge: GoogleFonts.leagueSpartan(
-            fontWeight: FontWeight.w400,
-            color: AppColors.dark,
-          ),
+              fontWeight: FontWeight.w400, color: AppColors.dark),
           bodyMedium: GoogleFonts.leagueSpartan(
-            fontWeight: FontWeight.w400,
-            color: AppColors.dark,
-          ),
+              fontWeight: FontWeight.w400, color: AppColors.dark),
           bodySmall: GoogleFonts.leagueSpartan(
-            fontWeight: FontWeight.w400,
-            color: AppColors.dark,
-          ),
+              fontWeight: FontWeight.w400, color: AppColors.dark),
           labelLarge: GoogleFonts.leagueSpartan(
-            fontWeight: FontWeight.w400,
-            color: AppColors.dark,
-          ),
+              fontWeight: FontWeight.w400, color: AppColors.dark),
           labelMedium: GoogleFonts.leagueSpartan(
-            fontWeight: FontWeight.w400,
-            color: AppColors.dark,
-          ),
+              fontWeight: FontWeight.w400, color: AppColors.dark),
           labelSmall: GoogleFonts.leagueSpartan(
-            fontWeight: FontWeight.w400,
-            color: AppColors.dark,
-          ),
+              fontWeight: FontWeight.w400, color: AppColors.dark),
         ),
         appBarTheme: AppBarTheme(
           backgroundColor: AppColors.white,
@@ -165,7 +135,10 @@ class _RootNavigationState extends State<RootNavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(index: _currentIndex, children: _pages),
+      body: IndexedStack(
+        index: _currentIndex,
+        children: _pages,
+      ),
       bottomNavigationBar: SafeArea(
         child: Container(
           margin: const EdgeInsets.fromLTRB(16, 0, 16, 12),

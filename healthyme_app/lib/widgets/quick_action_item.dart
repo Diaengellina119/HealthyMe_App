@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../main.dart';
 
 class QuickActionItem extends StatelessWidget {
-  final IconData icon;
+  final String iconAsset;
   final String label;
   final VoidCallback? onTap;
 
   const QuickActionItem({
     super.key,
-    required this.icon,
+    required this.iconAsset,
     required this.label,
     this.onTap,
   });
@@ -29,11 +30,16 @@ class QuickActionItem extends StatelessWidget {
           Container(
             width: 52,
             height: 52,
+            alignment: Alignment.center,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(14),
             ),
-            child: Icon(icon, color: AppColors.dark, size: 24),
+            child: SvgPicture.asset(
+              iconAsset,
+              width: 26,
+              height: 26,
+            ),
           ),
           const SizedBox(height: 6),
           Text(

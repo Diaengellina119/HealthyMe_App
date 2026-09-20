@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_svg/flutter_svg.dart';
 import '../main.dart';
 import '../widgets/quick_action_item.dart';
 import '../widgets/health_tracker_card.dart';
@@ -8,28 +8,37 @@ import '../widgets/article_card.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  static const List<Map<String, dynamic>> _quickActions = [
-    {'icon': Icons.medical_services_outlined, 'label': 'Doctors'},
-    {'icon': Icons.medication_outlined, 'label': 'Medicine'},
-    {'icon': Icons.local_shipping_outlined, 'label': 'Ambulance'},
-    {'icon': Icons.local_hospital_outlined, 'label': 'Hospital'},
-    {'icon': Icons.assignment_outlined, 'label': 'Medical\nRecords'},
-    {'icon': Icons.calendar_today_outlined, 'label': 'Appointment'},
-    {'icon': Icons.science_outlined, 'label': 'Lab And\nMedical Service'},
+  static const List<Map<String, String>> _quickActions = [
+    {'icon': 'assets/icons/doctors.svg', 'label': 'Doctors'},
+    {'icon': 'assets/icons/medicine.svg', 'label': 'Medicine'},
+    {'icon': 'assets/icons/ambulance.svg', 'label': 'Ambulance'},
+    {'icon': 'assets/icons/hospital.svg', 'label': 'Hospital'},
+    {'icon': 'assets/icons/medical_record.svg', 'label': 'Medical\nRecords'},
+    {'icon': 'assets/icons/appointment.svg', 'label': 'Appointment'},
+    {
+      'icon': 'assets/icons/lab_and_medical_service.svg',
+      'label': 'Lab And\nMedical Service'
+    },
   ];
 
   static const List<Map<String, String>> _articles = [
     {
       'title': 'Lorem Ipsum Dolor Sit Amet',
-      'desc': 'Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.',
+      'desc':
+          'Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.',
+      'image': 'assets/images/article_cover_1.svg',
     },
     {
       'title': 'Lorem Ipsum Dolor Sit Amet',
-      'desc': 'Consectetur Adipiscing Elit, Sed Do Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.',
+      'desc':
+          'Consectetur Adipiscing Elit, Sed Do Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.',
+      'image': 'assets/images/article_cover_2.svg',
     },
     {
       'title': 'Tips Menjaga Pola Makan',
-      'desc': 'Cara sederhana menjaga pola makan sehat di tengah kesibukan sehari-hari.',
+      'desc':
+          'Cara sederhana menjaga pola makan sehat di tengah kesibukan sehari-hari.',
+      'image': 'assets/images/article_cover_1.svg',
     },
   ];
 
@@ -66,27 +75,27 @@ class HomeScreen extends StatelessWidget {
   Widget _buildHeader() {
     return Row(
       children: [
-        const CircleAvatar(
-          radius: 22,
-          backgroundColor: AppColors.primaryLight,
-          child: Icon(Icons.person, color: AppColors.dark),
+        ClipOval(
+          child: SvgPicture.asset(
+            'assets/images/photo_profile_john.svg',
+            width: 44,
+            height: 44,
+            fit: BoxFit.cover,
+          ),
         ),
         const SizedBox(width: 10),
         const Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Hi, Welcome Back',
-                style: TextStyle(fontSize: 11, color: AppColors.primary),
-              ),
+              Text('Hi, Welcome Back',
+                  style: TextStyle(fontSize: 11, color: AppColors.primary)),
               Text(
                 'John Doe',
                 style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.dark,
-                ),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.dark),
               ),
             ],
           ),
@@ -121,9 +130,7 @@ class HomeScreen extends StatelessWidget {
                   TextSpan(
                     text: 'Dr. Olivia Turner, M.D.',
                     style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.primary,
-                    ),
+                        fontWeight: FontWeight.w400, color: AppColors.primary),
                   ),
                 ],
               ),
@@ -154,7 +161,8 @@ class HomeScreen extends StatelessWidget {
         ),
         itemBuilder: (context, index) {
           final item = _quickActions[index];
-          return QuickActionItem(icon: item['icon'], label: item['label']);
+          return QuickActionItem(
+              iconAsset: item['icon']!, label: item['label']!);
         },
       ),
     );
@@ -173,10 +181,9 @@ class HomeScreen extends StatelessWidget {
             const Text(
               'Health Tracker',
               style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w600,
-                color: AppColors.dark,
-              ),
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.dark),
             ),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
@@ -187,10 +194,9 @@ class HomeScreen extends StatelessWidget {
               child: const Text(
                 'Today',
                 style: TextStyle(
-                  fontSize: 11,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.primary,
-                ),
+                    fontSize: 11,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.primary),
               ),
             ),
           ],
@@ -201,7 +207,7 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               child: HealthTrackerCard(
                 title: 'Water Intake',
-                icon: Icons.water_drop_outlined,
+                iconAsset: 'assets/icons/water_intake.svg',
                 value: _waterValue.toString(),
                 unit: '/ ${_waterTarget}L',
                 progress: waterProgress,
@@ -211,7 +217,7 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               child: HealthTrackerCard(
                 title: 'Steps',
-                icon: Icons.directions_walk,
+                iconAsset: 'assets/icons/steps.svg',
                 value: _stepsValue.toString(),
                 unit: 'steps',
                 progress: stepsProgress,
@@ -226,7 +232,7 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               child: HealthTrackerCard(
                 title: 'Blood Glucose',
-                icon: Icons.opacity,
+                iconAsset: 'assets/icons/blood_glucose.svg',
                 value: _glucoseValue,
                 unit: 'mg/dL',
                 badgeText: 'Normal',
@@ -236,7 +242,7 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               child: HealthTrackerCard(
                 title: 'Blood Pressure',
-                icon: Icons.favorite_border,
+                iconAsset: 'assets/icons/blood_pressure.svg',
                 value: _pressureValue,
                 unit: 'mmHg',
                 badgeText: 'Optimal',
@@ -255,10 +261,7 @@ class HomeScreen extends StatelessWidget {
         const Text(
           'Article',
           style: TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.w400,
-            color: AppColors.dark,
-          ),
+              fontSize: 15, fontWeight: FontWeight.w400, color: AppColors.dark),
         ),
         const SizedBox(height: 12),
         SizedBox(
@@ -271,6 +274,7 @@ class HomeScreen extends StatelessWidget {
               return ArticleCard(
                 title: article['title']!,
                 description: article['desc']!,
+                imageAsset: article['image']!,
               );
             },
           ),

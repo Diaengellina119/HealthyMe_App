@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../main.dart';
 
 class HealthTrackerCard extends StatelessWidget {
   final String title;
-  final IconData icon;
+  final String iconAsset;
   final String value;
   final String? unit;
   final double? progress;
@@ -12,7 +13,7 @@ class HealthTrackerCard extends StatelessWidget {
   const HealthTrackerCard({
     super.key,
     required this.title,
-    required this.icon,
+    required this.iconAsset,
     required this.value,
     this.unit,
     this.progress,
@@ -41,7 +42,7 @@ class HealthTrackerCard extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              Icon(icon, color: Colors.white, size: 16),
+              SvgPicture.asset(iconAsset, width: 16, height: 16),
             ],
           ),
           const SizedBox(height: 10),
