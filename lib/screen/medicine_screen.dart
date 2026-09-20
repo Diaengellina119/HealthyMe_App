@@ -18,23 +18,28 @@ class _MedicineScreenState extends State<MedicineScreen> {
     {
       'name': 'Paracetamol 500mg',
       'price': 'Rp10.000',
-      'image': 'assets/images/medicine/paracetamol.png'
+      'image': 'assets/images/medicine/medicine_placeholder.png',
     },
     {
       'name': 'Paracetamol 500mg',
       'price': 'Rp10.000',
-      'image': 'assets/images/medicine/paracetamol.png'
+      'image': 'assets/images/medicine/medicine_placeholder.png',
     },
     {
       'name': 'Paracetamol 500mg',
       'price': 'Rp10.000',
-      'image': 'assets/images/medicine/paracetamol.png'
+      'image': 'assets/images/medicine/medicine_placeholder.png',
+    },
+    {
+      'name': 'Inhaler Ventolin',
+      'price': 'Rp45.000',
+      'image': 'assets/images/medicine/medicine_placeholder.png',
     },
   ];
 
   Widget _buildSection(String title) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 24),
+      padding: const EdgeInsets.only(bottom: 12), // sebelumnya 24
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -42,7 +47,7 @@ class _MedicineScreenState extends State<MedicineScreen> {
               style: const TextStyle(color: AppColors.dark, fontSize: 16)),
           const SizedBox(height: 12),
           SizedBox(
-            height: 150,
+            height: 138,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemCount: _medicineItems.length,
