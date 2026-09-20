@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import '../main.dart';
 import '../screen/profile_screen.dart';
+import '../screen/medicine_screen.dart';
 import '../widgets/quick_action_item.dart';
 import '../widgets/health_tracker_card.dart';
 import '../widgets/article_card.dart';
+import 'chat_dengan_dokter_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -169,7 +171,25 @@ class HomeScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           final item = _quickActions[index];
           return QuickActionItem(
-              iconAsset: item['icon']!, label: item['label']!);
+            iconAsset: item['icon']!,
+            label: item['label']!,
+            onTap: item['label'] == 'Medicine'
+                ? () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const MedicineScreen()),
+                    )
+                : item['label'] == 'Doctors'
+                    ? () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                const ChatDenganDokterScreen(),
+                          ),
+                        );
+                      }
+                    : null,
+          );
         },
       ),
     );

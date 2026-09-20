@@ -122,7 +122,8 @@ class SettingsScreen extends StatelessWidget {
             const CircleAvatar(
               radius: 36,
               backgroundColor: AppColors.primaryLight,
-              child: Icon(Icons.person, size: 36, color: AppColors.dark),
+              backgroundImage:
+                  AssetImage('assets/images/photo_profile_john.png'),
             ),
             const SizedBox(height: 8),
             const Text(
@@ -140,7 +141,7 @@ class SettingsScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.04),
+                    color: Colors.black.withValues(alpha: 0.04),
                     blurRadius: 8,
                     offset: const Offset(0, 3),
                   ),
