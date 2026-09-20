@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../screen/home_screen.dart';
 import '../screen/settings_screen.dart';
+import '../screen/splash_screen.dart';
 
 void main() {
   runApp(const HealthyMeApp());
@@ -82,7 +83,7 @@ class HealthyMeApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const RootNavigation(),
+      home: const SplashScreen(),
     );
   }
 }

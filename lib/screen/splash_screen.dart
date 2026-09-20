@@ -1,10 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SplashScreen extends StatelessWidget {
+import 'welcome_screen.dart';
+
+class SplashScreen extends StatefulWidget {
   const SplashScreen({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 3), () {
+      if (!mounted) return;
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const WelcomeScreen()),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +36,11 @@ class SplashScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // Ganti dengan image
-              Image.asset('assets/images/Frame.png',
-              width: 120,
-              height: 190,),
+              Image.asset(
+                'assets/images/Logo-white.png',
+                width: 120,
+                height: 190,
+              ),
               // Tambah ruang antara image dan teks
               const SizedBox(height: 42),
               // Ubah styling teks pakai Gfonts
@@ -46,4 +68,3 @@ class SplashScreen extends StatelessWidget {
     );
   }
 }
-
