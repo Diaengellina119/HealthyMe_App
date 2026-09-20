@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../screen/home_screen.dart';
 import '../screen/settings_screen.dart';
+import '../screen/chat_screen.dart';
 
 void main() {
   runApp(const HealthyMeApp());
@@ -122,7 +123,7 @@ class _RootNavigationState extends State<RootNavigation> {
 
   List<Widget> get _pages => [
         const HomeScreen(),
-        _placeholderPage('Chat', Icons.chat_bubble_outline),
+        const ChatScreen(),
         _placeholderPage('History', Icons.history),
         const SettingsScreen(),
       ];
