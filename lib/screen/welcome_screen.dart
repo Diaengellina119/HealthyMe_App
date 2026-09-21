@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:healthy_me/screen/login.dart';
 import 'package:healthy_me/screen/register.dart';
 
-import 'login.dart';
-import 'register.dart';
+import '../screen/login.dart';
+import '../screen/register.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({
