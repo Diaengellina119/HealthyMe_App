@@ -68,12 +68,8 @@ class WelcomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-<<<<<<< HEAD
-                  MaterialPageRoute(builder: (context) => const RegisterScreen()),
-=======
                   MaterialPageRoute(
                       builder: (context) => const RegisterScreen()),
->>>>>>> ac44215ae77a53fec919ee96bc4de86100a9a599
                 );
               },
               child: const Text('Sign Up'),
