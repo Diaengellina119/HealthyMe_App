@@ -6,6 +6,7 @@ import '../widgets/quick_action_item.dart';
 import '../widgets/health_tracker_card.dart';
 import '../widgets/article_card.dart';
 import 'chat_dengan_dokter_screen.dart';
+import 'notification_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -109,13 +110,25 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-        Container(
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            color: AppColors.primaryLight,
-            borderRadius: BorderRadius.circular(12),
+        MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const NotificationScreen()),
+              );
+            },
+            child: Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: AppColors.primaryLight,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Icon(Icons.notifications_none,
+                  color: AppColors.primary),
+            ),
           ),
-          child: const Icon(Icons.notifications_none, color: AppColors.primary),
         ),
       ],
     );
