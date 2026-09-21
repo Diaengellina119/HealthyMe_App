@@ -7,7 +7,6 @@ import '../widgets/health_tracker_card.dart';
 import '../widgets/article_card.dart';
 import 'chat_dengan_dokter_screen.dart';
 import 'notification_screen.dart';
-import 'medicine_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -188,21 +187,10 @@ class HomeScreen extends StatelessWidget {
             iconAsset: item['icon']!,
             label: item['label']!,
             onTap: item['label'] == 'Medicine'
-<<<<<<< HEAD
-                ? () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => const MedicineScreen(),
-                      ),
-                    );
-                  }
-=======
                 ? () => Navigator.push(
                       context,
                       MaterialPageRoute(builder: (_) => const MedicineScreen()),
                     )
->>>>>>> origin/main
                 : item['label'] == 'Doctors'
                     ? () {
                         Navigator.push(

@@ -36,7 +36,6 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   final TextEditingController _messageController = TextEditingController();
 
-  // TODO: ganti dengan data asli dari API/state management project kamu
   final List<ChatMessageData> _messages = const [
     ChatMessageData(
       isMe: true,
@@ -115,12 +114,8 @@ class _ChatScreenState extends State<ChatScreen> {
             color: AppColors.white, fontWeight: FontWeight.bold, fontSize: 17),
       ),
       actions: [
-        _buildAppBarIcon(Icons.headset_mic_outlined, () {
-          // TODO: mulai voice call
-        }),
-        _buildAppBarIcon(Icons.videocam_outlined, () {
-          // TODO: mulai video call
-        }),
+        _buildAppBarIcon(Icons.headset_mic_outlined, () {}),
+        _buildAppBarIcon(Icons.videocam_outlined, () {}),
         const SizedBox(width: 8),
       ],
     );
@@ -258,7 +253,6 @@ class _ChatScreenState extends State<ChatScreen> {
               cursor: SystemMouseCursors.click,
               child: GestureDetector(
                 onTap: () {
-                  // TODO: kirim _messageController.text ke backend/state management
                   _messageController.clear();
                 },
                 child: Container(
