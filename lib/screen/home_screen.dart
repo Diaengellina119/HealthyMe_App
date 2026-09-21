@@ -51,9 +51,11 @@ class HomeScreen extends StatelessWidget {
   static const String _glucoseValue = '98';
   static const String _pressureValue = '120/80';
 
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    backgroundColor: Colors.white,
+    body: SafeArea(
       child: SingleChildScrollView(
         padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
         child: Column(
@@ -71,8 +73,9 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildHeader(BuildContext context) {
     return Row(

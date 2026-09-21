@@ -24,6 +24,7 @@ class DokterListScreen extends StatelessWidget {
             fontWeight: FontWeight.w400,
           ),
         ),
+        centerTitle: false,
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 16),

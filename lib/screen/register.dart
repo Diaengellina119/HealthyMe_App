@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'root_navigation.dart';
+import '../main.dart';
+import 'login.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -83,7 +84,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => const RootNavigation()),
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const RootNavigation()), // ganti ke ini
                   );
                 },
                 style: ElevatedButton.styleFrom(
@@ -162,7 +165,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginScreen()),
+                    );
                   },
                   child: const Text(
                     'Log in',

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'register.dart';
-import 'root_navigation.dart';
+import '../main.dart';
 
 void main() {
   runApp(const MyApp());
@@ -182,7 +182,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const RootNavigation()),
+                          builder: (context) =>
+                              const RootNavigation()), // ganti ke ini
                     );
                   },
                   style: ElevatedButton.styleFrom(
