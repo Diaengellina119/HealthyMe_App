@@ -13,7 +13,6 @@ void main() {
   runApp(const HealthyMeApp());
 }
 
-// DEFINISI WARNA GLOBAL YANG DIGUNAKAN DI SELURUH WIDGET & SCREEN
 class AppColors {
   static const Color primary = Color(0xFF5B85D9);
   static const Color primaryLight = Color(0xFFF0F4FD);
@@ -99,8 +98,6 @@ class HealthyMeApp extends StatelessWidget {
       home: const SplashScreen(),
     );
   }
-<<<<<<< HEAD
-=======
 }
 
 class RootNavigation extends StatefulWidget {
@@ -210,5 +207,4 @@ class _RootNavigationState extends State<RootNavigation> {
       ),
     );
   }
->>>>>>> ac44215ae77a53fec919ee96bc4de86100a9a599
 }
