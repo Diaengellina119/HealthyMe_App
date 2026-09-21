@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'register.dart';
+import '../main.dart';
 
 void main() {
   runApp(const MyApp());
@@ -174,7 +176,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: double.infinity,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => const RootNavigation()), // ganti ke ini
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: primaryColor,
                     shape: RoundedRectangleBorder(
@@ -259,7 +266,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: TextStyle(color: Colors.grey, fontSize: 13),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push( // push biasa = user bisa "back" ke login
+                        context,
+                        MaterialPageRoute(builder: (context) => const RegisterScreen()),
+                      );
+                    },
                     child: Text(
                       'Sign Up',
                       style: TextStyle(
