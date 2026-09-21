@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:healthy_me/screen/login.dart';
+import 'package:healthy_me/screen/register.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({
@@ -60,7 +62,13 @@ class WelcomeScreen extends StatelessWidget {
             const SizedBox(height: 11),
             // Tombol Sign Up
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const RegisterScreen()),
+                );
+              },
               child: const Text('Sign Up'),
               style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF5C85D9),
@@ -76,7 +84,12 @@ class WelcomeScreen extends StatelessWidget {
             const SizedBox(height: 14),
             // Tombol Login
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
+                );
+              },
               child: const Text('Log In'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
