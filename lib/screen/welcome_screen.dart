@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'login.dart';
+import 'register.dart';
+
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({
     Key? key,
@@ -60,13 +63,18 @@ class WelcomeScreen extends StatelessWidget {
             const SizedBox(height: 11),
             // Tombol Sign Up
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const RegisterScreen()),
+                );
+              },
               child: const Text('Sign Up'),
               style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF5C85D9),
                   foregroundColor: Colors.white,
                   minimumSize: const Size(327.0, 45.0),
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(5),
                     ),
@@ -76,13 +84,18 @@ class WelcomeScreen extends StatelessWidget {
             const SizedBox(height: 14),
             // Tombol Login
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
+                );
+              },
               child: const Text('Log In'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
                 foregroundColor: const Color(0xFF5C85D9),
                 minimumSize: const Size(327.0, 45.0),
-                shape: RoundedRectangleBorder(
+                shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(
                     Radius.circular(5),
                   ),

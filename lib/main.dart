@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
-fitur-login
-import 'screen/login.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../screen/home_screen.dart';
-import '../screen/settings_screen.dart';
-import '../screen/splash_screen.dart';
-main
+
+import 'screen/home_screen.dart';
+import 'screen/login.dart';
+import 'screen/settings_screen.dart';
+import 'screen/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
+}
+
+// DEFINISI WARNA GLOBAL YANG DIGUNAKAN DI SELURUH WIDGET & SCREEN
+class AppColors {
+  static const Color primary = Color(0xFF5B85D9);
+  static const Color primaryLight = Color(0xFFF0F4FD);
+  static const Color white = Color(0xFFFFFFFF);
+  static const Color grey = Color(0xFF999BA7);
+  static const Color dark = Color(0xFF0C103F);
 }
 
 class MyApp extends StatelessWidget {
@@ -16,7 +24,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp( // Hapus keyword 'const' di sini
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
