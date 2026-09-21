@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../main.dart'; // untuk AppColors
-import 'notification_screen.dart';
+import '../main.dart';
 
 class NotificationItemData {
   final IconData icon;
@@ -29,7 +28,6 @@ class NotificationSection {
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
 
-  // TODO: ganti dengan data asli dari API/state management project kamu
   static const List<NotificationSection> sections = [
     NotificationSection(
       label: 'Today',
