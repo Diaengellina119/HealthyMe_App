@@ -3,9 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:healthy_me/screen/login.dart';
 import 'package:healthy_me/screen/register.dart';
 
-import '../screen/login.dart';
-import '../screen/register.dart';
-
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({
     Key? key,
@@ -77,7 +74,7 @@ class WelcomeScreen extends StatelessWidget {
                   backgroundColor: const Color(0xFF5C85D9),
                   foregroundColor: Colors.white,
                   minimumSize: const Size(327.0, 45.0),
-                  shape: const RoundedRectangleBorder(
+                  shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(5),
                     ),
@@ -98,7 +95,7 @@ class WelcomeScreen extends StatelessWidget {
                 backgroundColor: Colors.white,
                 foregroundColor: const Color(0xFF5C85D9),
                 minimumSize: const Size(327.0, 45.0),
-                shape: const RoundedRectangleBorder(
+                shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(
                     Radius.circular(5),
                   ),
