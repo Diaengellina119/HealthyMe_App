@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'screen/home_screen.dart';
-import 'screen/login.dart';
-import 'screen/settings_screen.dart';
-import 'screen/splash_screen.dart';
+
 import '../screen/home_screen.dart';
 import '../screen/settings_screen.dart';
 import '../screen/chat_screen.dart';
@@ -21,13 +18,6 @@ class AppColors {
   static const Color dark = Color(0xFF0C103F);
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp( // Hapus keyword 'const' di sini
-
 class HealthyMeApp extends StatelessWidget {
   const HealthyMeApp({super.key});
 
@@ -35,7 +25,6 @@ class HealthyMeApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Healthy Me',
-
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
